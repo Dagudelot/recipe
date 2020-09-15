@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Conseguir ingredientes",
+        "description": "Selecciona los ingredientes necesarios y la marca correcta para preparar la torta de vainilla",
+        "type": "checkbox",
+        "options": [
+            "Libra Harina Haz de Oro",
+            "Coco deshidratado",
+            "Pasas",
+            "1 barra de Margarina",
+            "1 libra de azucar Manuelita",
+            "Esencia de vainilla",
+            "Leche Colanta",
+            "6 huevos",
+            "Polvo Royal"
+        ]
+    },
+    {
+        "name": "Calentar horno",
+        "description": "Calienta el horno en la temperatura precisa",
+        "type": "radio",
+        "options": [
+            "100 grados",
+            "110 grados",
+            "120 grados",
+            "150 grados",
+            "180 grados"
+        ]
+    },
+    {
+        "name": "Engrasar molde",
+        "description": "Engrasa el molde con mantequilla"
+    },
+    {
+        "name": "Agregar margarina",
+        "description": "Agrega 50g margarina a la batidora"
+    },
+    {
+        "name": "Agregar azucar",
+        "description": "Agrega una (1) libra de azucar a la batidora"
+    },
+    {
+        "name": "Batir",
+        "description": "Bate margarina con azucar durante 20 minutos (con la batidora)"
+    },
+    {
+        "name": "Agregar huevos",
+        "description": "Agrega los huevos uno a uno"
+    },
+    {
+        "name": "Batir",
+        "description": "Bate la mezcla durante cinco (5) minutos"
+    },
+    {
+        "name": "Sernir la harina",
+        "description": "Pasa la harina por un colador"
+    },
+    {
+        "name": "Agregar la harina",
+        "description": "Agrega la harina sernida a la batidora"
+    },
+    {
+        "name": "Batir",
+        "description": "Bate la mezcla durante cinco (5) minutos"
+    }
+]
