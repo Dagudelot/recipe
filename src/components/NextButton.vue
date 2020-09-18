@@ -2,7 +2,6 @@
     <div 
     id="next_btn"
     v-if=" index < steps.length "
-    @click="INCREMENT_INDEX()"
     >
         Siguiente
     </div>
@@ -10,14 +9,11 @@
 
 <script>
     // Vuex
-    import { mapMutations, mapState } from 'vuex';
+    import { mapState } from 'vuex';
     
     export default {
         computed: {
             ...mapState([ 'steps', 'index' ])
-        },
-        methods: {
-            ...mapMutations([ 'INCREMENT_INDEX' ]),
         }
     }
 </script>

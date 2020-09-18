@@ -18,15 +18,20 @@
                 <Step
                 :step="steps[index]"
                 ></Step>
-                <NextButton></NextButton>
+                <NextButton
+                @click="validateStep"
+                ></NextButton>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    // Controllers
+    import StepValidator from '../controllers/StepValidator'
+
     // Vuex
-    import { mapState } from 'vuex';
+    import { mapState, mapMutations } from 'vuex';
 
     // Components
     import Step from './Step';
@@ -43,7 +48,20 @@
             }
         },
         computed: {
-            ...mapState([ 'steps', 'index' ])
+            ...mapState([ 'steps', 'index' ]),
+            ...mapState('stepStore', [ 'selectedInput' ])
+        },
+        methods: {
+            ...mapMutations([ 'INCREMENT_INDEX', 'ADD_FEEDBACK_MESSAGE' ]),
+            validateStep(){
+                const stepIsValid = StepValidator.validate( this.steps[ this.index ], this.selectedInput );
+
+                if( stepIsValid ){
+                    this.INCREMENT_INDEX();
+                }else{
+                    this.ADD_FEEDBACK_MESSAGE( this.steps[ this.index ].description );
+                }
+            }
         }
     }
 </script>

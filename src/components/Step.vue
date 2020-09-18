@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
     export default {
         props: [ 'step' ],
         data(){
@@ -25,11 +26,21 @@
                 selectedRadio: null
             }
         },
+        computed: {
+            ...mapState([ 'index' ]),
+        },
+        methods: {
+            ...mapMutations('stepStore', [ 'SET_SELECTED_INPUT' ]),
+        },
         watch: {
-            step(){
+            index(){
+                if( this.selectedCheckbox.length ) this.SET_SELECTED_INPUT(this.selectedCheckbox);
+                if( this.selectedRadio ) this.SET_SELECTED_INPUT(this.selectedRadio);
+            },
+            step(){                  
                 this.selectedCheckbox = []
-                this.selectedRadio = null
-            }
+                this.selectedRadio = null                
+            },
         }
     }
 </script>
