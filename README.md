@@ -1,24 +1,23 @@
-# recipe
+# Receta
 
-## Project setup
+### Sistema experto para asistencia en preparación de tortas de vainilla
+
+## Instalar proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compila y ejecuta servidor para hot-reloads en desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compila y minifica para producción
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Lints y corrige archivos
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
