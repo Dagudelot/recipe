@@ -2,22 +2,41 @@
     {
         "name": "Conseguir ingredientes",
         "description": "Selecciona los ingredientes necesarios y la marca correcta para preparar la torta de vainilla",
-        "type": "checkbox",
-        "options": [
-            "Libra Harina Haz de Oro",
+        "error": "Los ingredientes son: 1 libra de harina HAZ DE ORO, Coco deshidratado, Pasas, 1 barra de mantequilla MARGARINA, 1 libra de azucar MANUELITA, Esencia de vainilla, Leche COLANTA, 6 huevos y Polvo ROYAL",
+        "correct": [
+            "1 libra de harina HAZ DE ORO",
             "Coco deshidratado",
             "Pasas",
-            "1 barra de Margarina",
-            "1 libra de azucar Manuelita",
+            "1 barra de mantequilla MARGARINA",
+            "1 libra de azucar MANUELITA",
             "Esencia de vainilla",
-            "Leche Colanta",
+            "Leche COLANTA",
             "6 huevos",
-            "Polvo Royal"
+            "Polvo ROYAL"
+        ],
+        "type": "checkbox",
+        "options": [
+            "Arroz ROA",
+            "1 libra de harina HAZ DE ORO",
+            "Coco deshidratado",
+            "Galletas de soda",
+            "Pasas",
+            "1 barra de mantequilla MARGARINA",
+            "Maizena",
+            "1 libra de azucar MANUELITA",
+            "Esencia de vainilla",
+            "Leche COLANTA",
+            "6 huevos",
+            "1 barra de mantequilla RAMA",
+            "Polvo ROYAL",
+            "1 libra de harina NEVADA"
         ]
     },
     {
         "name": "Calentar horno",
         "description": "Calienta el horno en la temperatura precisa",
+        "error": "El horno debe estar en 180 grados",
+        "correct": "180 grados",
         "type": "radio",
         "options": [
             "100 grados",
@@ -29,38 +48,213 @@
     },
     {
         "name": "Engrasar molde",
-        "description": "Engrasa el molde con mantequilla"
+        "description": "Engrasa el molde",
+        "error": "El molde se engrasa con mantequilla",
+        "correct": "Con mantequilla",
+        "type": "radio",
+        "options": [
+            "Con aceite",
+            "Con grasa",
+            "Con mantequilla",
+            "Con queso en crema"
+        ]
     },
     {
         "name": "Agregar margarina",
-        "description": "Agrega 50g margarina a la batidora"
+        "description": "Agrega  margarina a la batidora",
+        "error": "se necesitan 50g",
+        "correct": "50g",
+        "type": "radio",
+        "options": [
+            "50g",
+            "100g",
+            "70g",
+            "95g"
+        ]
     },
     {
         "name": "Agregar azucar",
-        "description": "Agrega una (1) libra de azucar a la batidora"
+        "description": "Agrega azucar a la batidora",
+        "error": "Se necesita una libra de azucar",
+        "correct": "Una (1) Libra",
+        "type": "radio",
+        "options": [
+            "Dos (2) Libras",
+            "Una (1) Libra",
+            "Una Libra y media (1/2)",
+            "Tres (3) Libras"
+        ]
     },
     {
         "name": "Batir",
-        "description": "Bate margarina con azucar durante 20 minutos (con la batidora)"
+        "description": "Bate margarina con azucar",
+        "error": "Necesita batir la margina con azucar durante 20 minutos (con la batidora)",
+        "correct": "durante 20 minutos (con la batidora)",
+        "type": "radio",
+        "options": [
+            "durante 20 minutos (con la batidora)",
+            "durante 20 minutos (con un tenedor)",
+            "durante 15 minutos (con la batidora)",
+            "durante 15 minutos (con un tenedor)"
+        ]
     },
     {
         "name": "Agregar huevos",
-        "description": "Agrega los huevos uno a uno"
+        "description": "Agrega los huevos ",
+        "error": "Necesita agregar los huevos uno a uno",
+        "correct": "Uno a uno",
+        "type": "radio",
+        "options": [
+            "Uno a uno",
+            "Todos a la vez",
+            "Todos excepto"
+        ]
+
     },
     {
         "name": "Batir",
-        "description": "Bate la mezcla durante cinco (5) minutos"
+        "description": "Bate la mezcla ",
+        "error": "Se necesita batir la mezcla Durante cinco (5) minutos",
+        "correct": "Durante cinco (5) minutos",
+        "type": "radio",
+        "options": [
+            "Durante cinco (5) minutos",
+            "Durante diez (10) minutos",
+            "Durante siete (7) minutos",
+            "durante cuatro (4) minutos"
+        ]
+
     },
     {
         "name": "Sernir la harina",
-        "description": "Pasa la harina por un colador"
+        "description": "Sernir la harina",
+        "error": "Se necesita pasar la harina por un colador",
+        "correct": "Pasa la harina por un colador",
+        "type": "radio",
+        "options": [
+            "Agregar la harina sola",
+            "Mezlar la harina con agua ",
+            "Pasa la harina por un colador"
+        ]
+
     },
     {
         "name": "Agregar la harina",
-        "description": "Agrega la harina sernida a la batidora"
+        "description": "Agrega la harina a la batidora",
+        "error": "La harina iene que ser sernida",
+        "correct": "La harina sernida",
+        "type": "radio",
+        "options": [
+            "La harina sernida",
+            "La harina sin sernir"
+        ]
+
     },
     {
         "name": "Batir",
-        "description": "Bate la mezcla durante cinco (5) minutos"
+        "description": "Bate la mezcla",
+        "error": "La mezcla se debe batir Durante cinco (5) minutos",
+        "correct": "Durante cinco (5) minutos",
+        "type": "radio",
+        "options": [
+            "Durante tres (3) minutos",
+            "Durante cinco (5) minutos",
+            "Durante cuatro (4) minutos",
+            "Durante dos (2) minutos"
+        ]
+
+    },
+    {
+        "name": "Consistencia de mezcla",
+        "description": "En este punto la mezcla debe estar :",
+        "error": "La mezcla debe ser consistente (ni muy espeza ni muy liquida)",
+        "correct": "ni muy espeza ni muy liquida",
+        "type": "radio",
+        "options": [
+            "ni muy espeza ni muy liquida",
+            "Liquida",
+            "Espeza",
+            "Solida"
+        ]
+
+    },
+    {
+        "name": "Cáscara limon",
+        "description": "Rallar cáscara de limón:",
+        "error": "Rallar 1/2 cáscara de limon",
+        "correct": "1/2 cáscara de limon",
+        "type": "radio",
+        "options": [
+            "1/2 cáscara de limon",
+            "1 cáscara de limon",
+            "1/4 de cáscara de limon"
+        ]
+
+    },
+    {
+        "name": "esencia vainilla",
+        "description": "Agregar esencia de vainilla",
+        "error": "Debes agregar 2 cucharadas de esencia de vainilla",
+        "correct": "2 cucharadas de esencia de vainilla",
+        "type": "radio",
+        "options": [
+            "1/2 cucharada de esencia de vainilla",
+            "2 cucharadas de esencia de vainilla",
+            "3 cucharadas de esencia de vainilla"
+        ]
+
+    },
+    {
+        "name": "coco",
+        "description": "Agregar coco rallado ",
+        "error": "Debes agregar 1 posillo de coco",
+        "correct": "1 posillo de coco",
+        "type": "radio",
+        "options": [
+            "1/2 posillo de coco",
+            "2 posillo de coco",
+            "1 posillo de coco"
+        ]
+
+    },
+    {
+        "name": "pasas",
+        "description": "Agregar uvas pasas ",
+        "error": "Debes agregar 100g de uvas pasas",
+        "correct": "100g de uvas pasas",
+        "type": "radio",
+        "options": [
+            "150g de uvas pasas",
+            "100g de uvas pasas",
+            "130g de uvas pasas"
+        ]
+
+    },
+    {
+        "name": "meter al horno",
+        "description": "Meter al horno y dejarlo por un tiempo de:",
+        "error": "Debes dejar la mezcla en el horno por 40 minutos",
+        "correct": "40 minutos",
+        "type": "radio",
+        "options": [
+            "40 minutos",
+            "100 minutos",
+            "60 minutos"
+        ]
+
+    },
+    {
+        "name": "cuchillo",
+        "description": "Para saber que la torta ya esta debemos introducir un cuchillo en la torta y este debe salir:",
+        "error": "El cuchillo debe salir limpio",
+        "correct": "Limpio",
+        "type": "radio",
+        "options": [
+            "Mojado",
+            "Sucio",
+            "Limpio"
+        ]
+
     }
+    
 ]

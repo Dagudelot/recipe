@@ -8,7 +8,7 @@
             v-for="(option, index) in step.options"
             :key="index"
             >
-                <input type="checkbox" v-model="selectedCheckbox[index]" v-if=" step.type == 'checkbox' ">
+                <input type="checkbox" @click="checkboxClicked(index)" v-if=" step.type == 'checkbox' ">
                 <input type="radio" v-model="selectedRadio" :value="index" v-if=" step.type == 'radio' ">
                 <label>{{ option }}</label>
             </div>
@@ -19,7 +19,7 @@
 <script>
 import { mapMutations, mapState } from 'vuex'
     export default {
-        props: [ 'step' ],
+        props: [ 'step', 'nextButtonClicked' ],
         data(){
             return{
                 selectedCheckbox: [],
@@ -31,15 +31,37 @@ import { mapMutations, mapState } from 'vuex'
         },
         methods: {
             ...mapMutations('stepStore', [ 'SET_SELECTED_INPUT' ]),
+            checkboxClicked(index){
+                const element = this.step.options[index];
+
+                if( this.selectedCheckbox.includes(element) ){
+                    const index = this.selectedCheckbox.indexOf(element)
+                    this.selectedCheckbox.splice(index, 1)
+                }else{
+                    this.selectedCheckbox.push( element );
+                }
+            }
         },
         watch: {
-            index(){
-                if( this.selectedCheckbox.length ) this.SET_SELECTED_INPUT(this.selectedCheckbox);
-                if( this.selectedRadio ) this.SET_SELECTED_INPUT(this.selectedRadio);
+            nextButtonClicked(){
+
+                if( this.selectedCheckbox.length ) {
+                    this.SET_SELECTED_INPUT({
+                        selectedInput: this.selectedCheckbox, 
+                        type: 'checkbox'
+                    });
+                }
+
+                if( this.selectedRadio != null ) {
+                    this.SET_SELECTED_INPUT({
+                        selectedInput: this.selectedRadio, 
+                        type: 'radio'
+                    });
+                }
             },
             step(){                  
                 this.selectedCheckbox = []
-                this.selectedRadio = null                
+                this.selectedRadio = null
             },
         }
     }
@@ -48,7 +70,7 @@ import { mapMutations, mapState } from 'vuex'
 <style scoped>
 
     #step_options{
-        margin-top: 6em;
+        margin-top: 3em;
     }
 
     .step_option{

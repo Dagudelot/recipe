@@ -17,6 +17,7 @@ export default createStore({
 			state.index++;
 		},
 		ADD_FEEDBACK_MESSAGE( state, message ){
+			state.feedback_messages = [];
 			state.feedback_messages.unshift( message );
 		}
 	},

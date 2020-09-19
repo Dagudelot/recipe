@@ -1,12 +1,14 @@
 const stepStore = {
     namespaced: true,
 	state: {
-		selectedInput: null
+        selectedInput: null,
+        inputType: null
 	},
 	mutations: {
-        SET_SELECTED_INPUT( state, input ){
-            state.selectedInput = input;
-        }
+        SET_SELECTED_INPUT( state, data ){
+            state.selectedInput = data.selectedInput;
+            state.inputType = data.type;
+        },
 	},
 	actions: {
 	},

@@ -16,11 +16,15 @@
             id="recipe_content"
             v-else>
                 <Step
+                v-if=" index < steps.length "
                 :step="steps[index]"
+                :nextButtonClicked="nextButtonClicked"
                 ></Step>
                 <NextButton
+                v-if=" index < steps.length "
                 @click="validateStep"
                 ></NextButton>
+                <Result v-if="index == steps.length"></Result>
             </div>
         </div>
     </div>
@@ -36,31 +40,37 @@
     // Components
     import Step from './Step';
     import NextButton from './NextButton';
+    import Result from './Result';
 
     export default {
         components: {
             Step,
-            NextButton
+            NextButton,Result
         },
         data(){
             return {
-                started: 0
+                started: 0,
+                nextButtonClicked: 1
             }
         },
         computed: {
             ...mapState([ 'steps', 'index' ]),
-            ...mapState('stepStore', [ 'selectedInput' ])
+            ...mapState('stepStore', [ 'selectedInput', 'inputType' ])
         },
         methods: {
             ...mapMutations([ 'INCREMENT_INDEX', 'ADD_FEEDBACK_MESSAGE' ]),
             validateStep(){
-                const stepIsValid = StepValidator.validate( this.steps[ this.index ], this.selectedInput );
+                this.nextButtonClicked++;                
 
-                if( stepIsValid ){
-                    this.INCREMENT_INDEX();
-                }else{
-                    this.ADD_FEEDBACK_MESSAGE( this.steps[ this.index ].description );
-                }
+                setTimeout(() => {
+                    const stepIsValid = StepValidator.validate( this.steps[ this.index ], this.selectedInput, this.inputType );
+
+                    if( stepIsValid ){
+                        this.INCREMENT_INDEX();
+                    }else{
+                        this.ADD_FEEDBACK_MESSAGE( this.steps[ this.index ].error );
+                    }
+                }, 1000)
             }
         }
     }
